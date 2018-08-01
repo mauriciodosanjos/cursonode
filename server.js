@@ -1,6 +1,10 @@
+require('dotenv').config()
+
 const app = require('./custom_express')
-const porta = 3000
+
+const porta = process.env.PORT
+console.log('Ambiente:', process.env.NODE_ENV)
 
 app.listen(porta, function(){
-    console.log(`server ok`)
+    console.log(`Server..: OK`)
 })

@@ -18,4 +18,18 @@ describe('# ProdutosController', () => {
             .expect(200, done)
     })
 
+    it('Cadastro de produtos JSON', (done) => {
+        request(app)
+            .post('/produtos')
+            .send({
+                "titulo": "Teste via supertest",
+                "preco": 9.99,
+                "descricao": "teste teste teste"
+               })
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(201, done)
+    })
+
+
 })
